@@ -1,22 +1,9 @@
-
-function solution(number){
-  let romNumber = '';
-  let nums = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
-  let letters = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'];
-  let count = nums.length - 1;
-
-  while (number > 0) {
-    if (number >= nums[count]) {
-      romNumber += letters[count];
-      number -= nums[count];
-    } else {
-      count--;
-    }
-    
-  }
-
-
-  return romNumber;
+function arrayDiff(a, b) {
+  let newArr = [];
+    newArr = b.reduce((arr, exept) => {
+      return arr.filter(e => e !== exept)
+    }, a);
+  return newArr;
 }
 
-console.log(solution(1001))
+console.log(arrayDiff([1, 2, 3, 4, 5, 2, 4], [2, 3]))
