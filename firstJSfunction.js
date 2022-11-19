@@ -1,16 +1,27 @@
-let number = 7
+let url = 'https://www.google.ccadsfom';
+let newUrl = '';
 
-let count = 0;
 
-while (number > 0) {
-    if (number / 2 % 1 !== 0) {
-        count++;
-        number = (number - 1) / 2;
-    } else {
-        number /= 2;
-    }
 
+
+if (url.startsWith('http://')) {
+    url = url.slice(7)
+} else if (url.startsWith('https://')) {
+    url = url.slice(8)
 }
 
+if (url.startsWith('www.')) {
+    url = url.slice(4)
+}
 
-console.log(count)
+newUrl = url.slice(0, url.indexOf('.') - url.length)
+
+
+console.log(newUrl)
+
+
+
+
+
+
+
